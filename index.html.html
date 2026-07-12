@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nusaiba Rahman Adrita | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPink: {
+                            50: '#fff0f6',
+                            100: '#ffdeeb',
+                            200: '#fcc2d7',
+                            500: '#f06595',
+                            600: '#e64980',
+                            700: '#d6336c',
+                            900: '#862e9c',
+                        },
+                        softYellow: {
+                            300: '#fff9db',
+                            400: '#ffe066',
+                            500: '#ffd43b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        .font-cursive {
+            font-family: 'Dancing Script', cursive;
+        }
+        .font-notepad {
+            font-family: 'Architects Daughter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-brandPink-50 text-slate-900 font-notepad tracking-wide min-h-screen flex flex-col">
+
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-brandPink-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <button onclick="MapsTo('home')" class="text-3xl font-bold font-cursive text-brandPink-700 tracking-wider focus:outline-none">Nusaiba.</button>
+            <div class="hidden md:flex space-x-6 font-medium text-sm">
+                <button onclick="MapsTo('home')" class="nav-link text-brandPink-700 font-bold hover:text-brandPink-600 transition-colors">Home</button>
+                <button onclick="MapsTo('about')" class="nav-link text-slate-600 hover:text-brandPink-600 transition-colors">About & Education</button>
+                <button onclick="MapsTo('skills')" class="nav-link text-slate-600 hover:text-brandPink-600 transition-colors">Skills</button>
+                <button onclick="navigateToProjects(event)" class="nav-link text-slate-600 hover:text-brandPink-600 transition-colors">Projects</button>
+                <button onclick="MapsTo('experience')" class="nav-link text-slate-600 hover:text-brandPink-600 transition-colors">Experience</button>
+                <button onclick="MapsTo('quiz')" class="nav-link text-slate-600 hover:text-brandPink-600 transition-colors flex items-center gap-1"><i class="fa-solid fa-gamepad text-brandPink-600"></i> Fun Quiz</button>
+                <button onclick="MapsTo('contact')" class="nav-link text-slate-600 hover:text-brandPink-600 transition-colors">Contact</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex flex-col">
+        
+        <section id="page-home" class="page-view flex-grow relative bg-gradient-to-br from-brandPink-700 via-brandPink-600 to-purple-900 text-white flex items-center py-16">
+            <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center w-full">
+                <div class="space-y-6 text-center md:text-left">
+                    <div class="inline-block bg-white/10 text-softYellow-400 border border-white/20 px-4 py-1.5 rounded-full text-sm font-medium tracking-wide">
+                        Computer Science Undergraduate
+                    </div>
+                    <div class="bg-black/20 p-6 rounded-2xl border border-white/10 shadow-inner inline-block w-full">
+                        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-none text-softYellow-400 font-notepad">
+                            Nusaiba Rahman Adrita
+                        </h1>
+                    </div>
+                    <p class="text-xl md:text-2xl text-brandPink-50 font-light leading-relaxed">
+                        Specializing in <span class="text-softYellow-400 font-bold">Data Analytics</span> with a strong interest in systems, computer networking, and core hardware components.
+                    </p>
+                    <div class="pt-4 flex flex-wrap justify-center md:justify-start gap-4">
+                        <button onclick="MapsTo('projects')" class="bg-softYellow-400 text-slate-900 px-6 py-3 rounded-xl font-bold shadow-lg shadow-softYellow-400/20 hover:bg-softYellow-300 hover:-translate-y-0.5 transition-all duration-200">View Projects</button>
+                        <button onclick="MapsTo('quiz')" class="bg-white/10 text-white border border-white/20 px-6 py-3 rounded-xl font-bold backdrop-blur-sm hover:bg-white/20 hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2"><i class="fa-solid fa-play"></i> Play Mini-Game</button>
+                    </div>
+                </div>
+                <div class="flex justify-center relative">
+                    <div class="w-72 h-72 md:w-96 md:h-96 rounded-2xl bg-gradient-to-tr from-brandPink-200 to-softYellow-300 opacity-20 absolute blur-3xl -z-10"></div>
+                    <div class="bg-slate-900/60 border border-white/10 p-8 rounded-2xl backdrop-blur-md shadow-2xl w-full max-w-sm space-y-4">
+                        <div class="flex items-center space-x-2 text-red-400 text-xs"><span class="w-3 h-3 rounded-full bg-red-500"></span><span class="w-3 h-3 rounded-full bg-yellow-500"></span><span class="w-3 h-3 rounded-full bg-green-500"></span><span class="text-slate-300 ml-2">data_pipeline.py</span></div>
+                        <code class="block text-sm text-brandPink-100 font-mono space-y-2">
+                            <p><span class="text-softYellow-400">import</span> data_analytics</p>
+                            <p><span class="text-softYellow-400">import</span> networking</p>
+                            <br>
+                            <p class="text-slate-400"># Focus Arrays</p>
+                            <p>university = <span class="text-emerald-300">"APU Malaysia"</span></p>
+                            <p>specialization = <span class="text-emerald-300">"Data Analytics"</span></p>
+                        </code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-about" class="page-view hidden py-20 bg-brandPink-50/50 flex-grow">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="grid md:grid-cols-12 gap-12 items-start">
+                    <div class="md:col-span-5 space-y-6">
+                        <h2 class="text-4xl font-cursive text-brandPink-700 tracking-widest">Profile</h2>
+                        <h3 class="text-2xl font-bold text-slate-900">Academic Foundations & Technical Focus</h3>
+                        <p class="text-slate-700 leading-relaxed pt-2">
+                            I am a proactive second-year Computer Science undergraduate student from Bangladesh. Alongside my heavy technical focus, I offer almost 2 years of professional competence in administrative management.
+                        </p>
+                        <div class="pt-4 space-y-3">
+                            <div class="flex items-center space-x-3 text-sm text-slate-800 bg-white p-4 rounded-xl border border-brandPink-100 shadow-sm">
+                                <i class="fa-solid fa-user-ninja text-brandPink-600 text-xl w-6 text-center"></i>
+                                <span><strong>1st Dan Black Belt</strong> in Shito-ryu Karate</span>
+                            </div>
+                            <div class="flex items-center space-x-3 text-sm text-slate-800 bg-white p-4 rounded-xl border border-brandPink-100 shadow-sm">
+                                <i class="fa-solid fa-award text-brandPink-600 text-xl w-6 text-center"></i>
+                                <span>Awarded <strong>"Best Reader"</strong> by National Book Center (2022)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-7 bg-white border border-brandPink-200 p-8 rounded-2xl shadow-md">
+                        <h3 class="text-3xl font-cursive text-brandPink-700 mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-graduation-cap text-brandPink-600"></i> Education
+                        </h3>
+                        <div class="border-l-2 border-brandPink-300 pl-6 space-y-6">
+                            <div class="relative">
+                                <span class="absolute -left-[31px] top-1.5 bg-brandPink-600 w-4 h-4 rounded-full border-4 border-white"></span>
+                                <div class="flex justify-between items-start flex-wrap gap-2">
+                                    <h4 class="font-bold text-lg text-slate-950">Asia Pacific University of Technology and Innovation (APU)</h4>
+                                    <span class="bg-softYellow-400 text-slate-900 text-xs px-3 py-1 rounded-full font-bold">2024 — 2027</span>
+                                </div>
+                                <p class="text-brandPink-700 font-medium text-sm mt-1">BSc in Computer Science, Specializing in Data Analytics</p>
+                                <p class="text-sm font-bold text-slate-700 mt-2 bg-brandPink-50 inline-block px-3 py-1 rounded-lg">CGPA: 2.82 / 4.00</p>
+                                
+                                <div class="mt-6">
+                                    <h5 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Key Modules Covered:</h5>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-brandPink-50 border border-brandPink-100 text-slate-800 text-xs px-3 py-1 rounded-md">Introduction to Python</span>
+                                        <span class="bg-brandPink-50 border border-brandPink-100 text-slate-800 text-xs px-3 py-1 rounded-md">Data Mining & Predictive Modelling</span>
+                                        <span class="bg-brandPink-50 border border-brandPink-100 text-slate-800 text-xs px-3 py-1 rounded-md">Introduction to Networking</span>
+                                        <span class="bg-brandPink-50 border border-brandPink-100 text-slate-800 text-xs px-3 py-1 rounded-md">System Software & Computing Concepts</span>
+                                        <span class="bg-brandPink-50 border border-brandPink-100 text-slate-800 text-xs px-3 py-1 rounded-md">System and Network Administration</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-skills" class="page-view hidden py-20 bg-brandPink-50/50 flex-grow">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-5xl font-cursive text-brandPink-700 mb-2">Expertise</h2>
+                    <h3 class="text-xl font-bold text-slate-800">Technical Toolkit & Languages</h3>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white border border-brandPink-200 p-6 rounded-2xl shadow-sm">
+                        <h4 class="font-bold text-lg mb-4 text-brandPink-700 flex items-center gap-2 border-b border-brandPink-100 pb-2">
+                            <i class="fa-solid fa-laptop-code"></i> Core Technical Skills
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-brandPink-50 border border-brandPink-100 px-3 py-1 rounded-md text-sm text-slate-800">Cisco Packet Tracer</span>
+                            <span class="bg-brandPink-50 border border-brandPink-100 px-3 py-1 rounded-md text-sm text-slate-800">PowerBI</span>
+                            <span class="bg-brandPink-50 border border-brandPink-100 px-3 py-1 rounded-md text-sm text-slate-800">MySQL / DBMS</span>
+                            <span class="bg-brandPink-50 border border-brandPink-100 px-3 py-1 rounded-md text-sm text-slate-800">SAS Studio</span>
+                            <span class="bg-brandPink-50 border border-brandPink-100 px-3 py-1 rounded-md text-sm text-slate-800">Virtual Box</span>
+                            <span class="bg-brandPink-50 border border-brandPink-100 px-3 py-1 rounded-md text-sm text-slate-800">KOHA</span>
+                            <span class="bg-brandPink-50 border border-brandPink-100 px-3 py-1 rounded-md text-sm text-slate-800">Microsoft Excel</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-brandPink-200 p-6 rounded-2xl shadow-sm">
+                        <h4 class="font-bold text-lg mb-4 text-brandPink-700 flex items-center gap-2 border-b border-brandPink-100 pb-2">
+                            <i class="fa-solid fa-brain"></i> Professional Soft Skills
+                        </h4>
+                        <ul class="space-y-2 text-slate-700 text-sm">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-softYellow-500 bg-slate-900 p-1 rounded-full text-[10px]"></i> Problem Solving</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-softYellow-500 bg-slate-900 p-1 rounded-full text-[10px]"></i> Time Management</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-softYellow-500 bg-slate-900 p-1 rounded-full text-[10px]"></i> Adaptability</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-softYellow-500 bg-slate-900 p-1 rounded-full text-[10px]"></i> Work Ethics</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-softYellow-500 bg-slate-900 p-1 rounded-full text-[10px]"></i> Critical Thinking</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-softYellow-500 bg-slate-900 p-1 rounded-full text-[10px]"></i> Teamwork</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white border border-brandPink-200 p-6 rounded-2xl shadow-sm">
+                        <h4 class="font-bold text-lg mb-4 text-brandPink-700 flex items-center gap-2 border-b border-brandPink-100 pb-2">
+                            <i class="fa-solid fa-language"></i> Languages Spoken
+                        </h4>
+                        <div class="space-y-3 text-sm">
+                            <div>
+                                <div class="flex justify-between text-slate-700 mb-1"><span>Bangla</span><span class="text-xs font-bold text-brandPink-600">Native</span></div>
+                                <div class="w-full bg-brandPink-100 h-2 rounded-full"><div class="bg-softYellow-500 h-2 rounded-full" style="width: 100%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-slate-700 mb-1"><span>English</span><span class="text-xs font-bold text-brandPink-600">Fluent</span></div>
+                                <div class="w-full bg-brandPink-100 h-2 rounded-full"><div class="bg-softYellow-500 h-2 rounded-full" style="width: 90%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-slate-700 mb-1"><span>French & Bahasa Melayu</span><span class="text-xs font-bold text-brandPink-600">Beginner</span></div>
+                                <div class="w-full bg-brandPink-100 h-2 rounded-full"><div class="bg-softYellow-500 h-2 rounded-full" style="width: 30%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-projects" class="page-view hidden py-20 bg-brandPink-50/50 flex-grow">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-5xl font-cursive text-brandPink-700 mb-2">Showcase</h2>
+                    <h3 class="text-xl font-bold text-slate-800">Recent Project Portfolio</h3>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white border border-brandPink-200 rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:border-brandPink-400 transition-colors">
+                        <div>
+                            <h4 class="font-bold text-lg text-slate-900 mb-2">Library Management System</h4>
+                            <p class="text-slate-600 text-sm">Transactional console script application tracking operations data configurations natively.</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-brandPink-100 flex flex-wrap gap-1.5">
+                            <span class="text-[11px] bg-brandPink-50 text-brandPink-800 px-2.5 py-0.5 rounded font-bold">C Programming</span>
+                        </div>
+                    </div>
+                    <div class="bg-white border border-brandPink-200 rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:border-brandPink-400 transition-colors">
+                        <div>
+                            <h4 class="font-bold text-lg text-slate-900 mb-2">Multi-Site Enterprise Network</h4>
+                            <p class="text-slate-600 text-sm">Infrastructure layout design and specialized IoT network setups in Cisco Packet Tracer.</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-brandPink-100 flex flex-wrap gap-1.5">
+                            <span class="text-[11px] bg-brandPink-50 text-brandPink-800 px-2.5 py-0.5 rounded font-bold">Cisco Packet Tracer</span>
+                            <span class="text-[11px] bg-brandPink-50 text-brandPink-800 px-2.5 py-0.5 rounded font-bold">IoT</span>
+                        </div>
+                    </div>
+                    <div class="bg-white border border-brandPink-200 rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:border-brandPink-400 transition-colors">
+                        <div>
+                            <h4 class="font-bold text-lg text-slate-900 mb-2">Customer Purchase Analysis</h4>
+                            <p class="text-slate-600 text-sm">End-to-end customer purchasing behaviors and metrics analysis project.</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-brandPink-100 flex flex-wrap gap-1.5">
+                            <span class="text-[11px] bg-brandPink-50 text-brandPink-800 px-2.5 py-0.5 rounded font-bold">Python</span>
+                            <span class="text-[11px] bg-brandPink-50 text-brandPink-800 px-2.5 py-0.5 rounded font-bold">SQL</span>
+                            <span class="text-[11px] bg-brandPink-50 text-brandPink-800 px-2.5 py-0.5 rounded font-bold">Power BI</span>
+                        </div>
+                    </div>
+                    <div class="bg-white border border-brandPink-200 rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:border-brandPink-400 transition-colors">
+                        <div>
+                            <h4 class="font-bold text-lg text-slate-900 mb-2">Data Processing & Mining</h4>
+                            <p class="text-slate-600 text-sm">Extensive data manipulation layers focusing on data cleaning and mining patterns.</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-brandPink-100 flex flex-wrap gap-1.5">
+                            <span class="text-[11px] bg-brandPink-50 text-brandPink-800 px-2.5 py-0.5 rounded font-bold">SAS Studio</span>
+                        </div>
+                    </div>
+                    <div class="bg-white border border-brandPink-200 rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:border-brandPink-400 transition-colors">
+                        <div>
+                            <h4 class="font-bold text-lg text-slate-900 mb-2">Course Recovery System</h4>
+                            <p class="text-slate-600 text-sm">System setup handling state variable structural flows adhering to OOP designs strictly.</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-brandPink-100 flex flex-wrap gap-1.5">
+                            <span class="text-[11px] bg-brandPink-50 text-brandPink-800 px-2.5 py-0.5 rounded font-bold">Java</span>
+                            <span class="text-[11px] bg-brandPink-50 text-brandPink-800 px-2.5 py-0.5 rounded font-bold">OOP</span>
+                        </div>
+                    </div>
+                    <div class="bg-white border border-brandPink-200 rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:border-brandPink-400 transition-colors">
+                        <div>
+                            <h4 class="font-bold text-lg text-slate-900 mb-2">BGD Trade Analytics Dashboard</h4>
+                            <p class="text-slate-600 text-sm">Interactive dashboard analytics visual tracking matrix coordinates for Bangladesh trade layouts.</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-brandPink-100 flex flex-wrap gap-1.5">
+                            <span class="text-[11px] bg-brandPink-50 text-brandPink-800 px-2.5 py-0.5 rounded font-bold">Power BI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-experience" class="page-view hidden py-20 bg-brandPink-50/50 flex-grow">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-5xl font-cursive text-brandPink-700 mb-2">Employment</h2>
+                    <h3 class="text-xl font-bold text-slate-800">Work History</h3>
+                </div>
+
+                <div class="bg-white border border-brandPink-200 p-8 rounded-2xl shadow-md space-y-4">
+                    <div class="flex justify-between items-start flex-wrap gap-4">
+                        <div>
+                            <h4 class="text-2xl font-bold text-slate-950">Library Assistant (Part-time)</h4>
+                            <p class="text-brandPink-700 font-medium">Asia Pacific University Library | Malaysia</p>
+                        </div>
+                        <span class="bg-softYellow-400 text-slate-900 border border-brandPink-200 text-xs px-4 py-1.5 rounded-full font-bold">2024 — Present</span>
+                    </div>
+                    <hr class="border-brandPink-100 my-4">
+                    <h5 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Key Responsibilities:</h5>
+                    <ul class="space-y-3 text-slate-700 text-sm list-disc pl-5">
+                        <li>Assist patrons with transactions, fine collection, borrowing and renewal of library items, and meeting room bookings.</li>
+                        <li>Manage layout tracking logs, stock inventories, and book catalog categorical structural organization.</li>
+                        <li>Patrol around floor zones systematically ensuring complete compliance with silence protocols and operating code criteria.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-quiz" class="page-view hidden py-20 bg-brandPink-50/50 flex-grow">
+            <div class="max-w-2xl mx-auto px-6">
+                <div class="text-center mb-10">
+                    <div class="inline-block bg-white text-brandPink-700 text-xs px-3 py-1 rounded-full font-bold border border-brandPink-200 uppercase tracking-wider mb-2">
+                        Interactive Game Area
+                    </div>
+                    <h3 class="text-5xl font-cursive text-brandPink-700">Help the Data Analyst!</h3>
+                    <p class="text-slate-600 text-sm mt-2">Test your structural computing and operations intelligence matrix loops.</p>
+                </div>
+
+                <div class="bg-white border-2 border-brandPink-200 rounded-2xl p-8 shadow-md relative">
+                    <div id="quiz-window">
+                        <div class="flex justify-between items-center text-xs text-slate-400 font-mono mb-6">
+                            <span id="quiz-progress">Question 1 of 3</span>
+                            <span id="quiz-score">Score: 0</span>
+                        </div>
+                        
+                        <h4 id="quiz-question" class="text-lg font-bold text-slate-900 mb-6 leading-relaxed">Loading Question...</h4>
+                        
+                        <div id="quiz-options" class="space-y-3">
+                            </div>
+                    </div>
+
+                    <div id="quiz-results" class="hidden text-center py-6 space-y-4">
+                        <div class="w-20 h-20 bg-softYellow-300 text-slate-900 rounded-full flex items-center justify-center text-3xl mx-auto shadow-sm">
+                            <i class="fa-solid fa-trophy text-brandPink-600"></i>
+                        </div>
+                        <h4 class="text-3xl font-cursive text-brandPink-700">Evaluation Finished!</h4>
+                        <p id="results-text" class="text-slate-700 font-medium"></p>
+                        <button onclick="restartQuiz()" class="bg-slate-900 text-white font-bold py-2.5 px-6 rounded-xl hover:bg-slate-800 transition-colors text-sm shadow">Try Again</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-contact" class="page-view hidden py-20 bg-brandPink-50/50 flex-grow">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="grid md:grid-cols-12 gap-12 items-center">
+                    <div class="md:col-span-5 space-y-6">
+                        <h2 class="text-5xl font-cursive text-brandPink-700 tracking-widest">Connect</h2>
+                        <h3 class="text-2xl font-bold text-slate-950">Let's talk Systems, Networks & Analytics</h3>
+                        <p class="text-slate-600 text-sm">Pass message arguments into the functional pipeline interface to instantiate direct gateway redirects.</p>
+                        
+                        <div class="space-y-4 pt-2 text-sm text-slate-700">
+                            <div class="flex items-center space-x-3 bg-white p-3 rounded-xl border border-brandPink-100 shadow-sm"><i class="fa-regular fa-envelope text-brandPink-600 text-lg"></i><span>nusaibarahman27@gmail.com</span></div>
+                            <div class="flex items-center space-x-3 bg-white p-3 rounded-xl border border-brandPink-100 shadow-sm"><i class="fa-solid fa-phone text-brandPink-600 text-lg"></i><span>+60 177832243</span></div>
+                            <div class="flex items-center space-x-3 bg-white p-3 rounded-xl border border-brandPink-100 shadow-sm"><i class="fa-solid fa-map-pin text-brandPink-600 text-lg"></i><span>Selangor, Malaysia</span></div>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-7 bg-white border border-brandPink-200 p-8 rounded-2xl shadow-md">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Your Name</label>
+                                <input type="text" id="form-name" placeholder="John Doe" class="w-full bg-brandPink-50 border border-brandPink-200 rounded-xl p-3 text-sm focus:ring-2 focus:ring-brandPink-500 focus:outline-none text-slate-900">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Your Message</label>
+                                <textarea id="form-message" rows="4" placeholder="Write your message here..." class="w-full bg-brandPink-50 border border-brandPink-200 rounded-xl p-3 text-sm focus:ring-2 focus:ring-brandPink-500 focus:outline-none text-slate-900"></textarea>
+                            </div>
+                            
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider pt-2">Choose Contact Method:</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <button onclick="sendToWhatsApp()" class="flex items-center justify-center gap-2 bg-emerald-600 text-white font-bold py-3.5 px-4 rounded-xl hover:bg-emerald-500 transition-colors shadow-sm">
+                                    <i class="fa-brands fa-whatsapp text-xl"></i> Send via WhatsApp
+                                </button>
+                                <button onclick="sendToEmail()" class="flex items-center justify-center gap-2 bg-brandPink-600 text-white font-bold py-3.5 px-4 rounded-xl hover:bg-brandPink-500 transition-colors shadow-sm">
+                                    <i class="fa-regular fa-envelope text-xl"></i> Send via Email
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-6 text-center text-xs border-t border-slate-800 font-mono">
+        <p>&copy; 2026 Nusaiba Rahman Adrita. Theme configured using Tailwind CSS layout templates.</p>
+    </footer>
+
+    <script>
+        // SPA Routing Engine matching 'MapsTo' exact pattern
+        function MapsTo(pageId) {
+            document.querySelectorAll('.page-view').forEach(view => {
+                view.classList.add('hidden');
+            });
+
+            const targetPage = document.getElementById('page-' + pageId);
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+            }
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('text-brandPink-700', 'font-bold');
+                link.classList.add('text-slate-600');
+            });
+
+            if (window.event && window.event.currentTarget && window.event.currentTarget.classList.contains('nav-link')) {
+                window.event.currentTarget.classList.remove('text-slate-600');
+                window.event.currentTarget.classList.add('text-brandPink-700', 'font-bold');
+            }
+            window.scrollTo(0, 0);
+        }
+
+        function navigateToProjects(e) {
+            e.preventDefault();
+            MapsTo('projects');
+        }
+
+        function sendToWhatsApp() {
+            const name = document.getElementById('form-name').value || "Visitor";
+            const msg = document.getElementById('form-message').value || "Hello!";
+            const phone = "60177832243";
+            const payload = encodeURIComponent(`Hi Nusaiba, my name is ${name}.\n\nMessage: ${msg}`);
+            window.open(`https://wa.me/${phone}?text=${payload}`, '_blank');
+        }
+
+        function sendToEmail() {
+            const name = document.getElementById('form-name').value || "Visitor";
+            const msg = document.getElementById('form-message').value || "Hello!";
+            const targetMail = "nusaibarahman27@gmail.com";
+            const subject = encodeURIComponent(`Portfolio Gateway Connection from ${name}`);
+            const body = encodeURIComponent(`Name: ${name}\n\nMessage Details:\n${msg}`);
+            window.location.href = `mailto:${targetMail}?subject=${subject}&body=${body}`;
+        }
+
+        const quizData = [
+            {
+                question: "A student is talking loudly in the APU Library quiet zone. What is the optimal operation rule?",
+                options: [
+                    "Deploy a custom batch routing script to disable their network access point.",
+                    "Politely exercise strategic observation and enforce standard categorical safety guidelines.",
+                    "Challenge them immediately to a friendly karate sparring match."
+                ],
+                correct: 1
+            },
+            {
+                question: "You have a massive dataset of unorganized customer transactional records. Which workflow layout should be ran first?",
+                options: [
+                    "Data Management, Preprocessing, and Advanced Cleaning via SAS Studio configurations.",
+                    "Directly display the raw messy metrics into graphical Power BI dashboard forecasting layers.",
+                    "Ignore the dataset constraints entirely and run basic default logic loops."
+                ],
+                correct: 0
+            },
+            {
+                question: "Which skill combination provides optimal administrative and data parsing functionality?",
+                options: [
+                    "Guessing system metrics dynamically using static mock spreadsheets.",
+                    "Cisco Networking layouts, Python processing modules, and Data Analytics frameworks.",
+                    "Browsing social logs passively on public library interface machines."
+                ],
+                correct: 1
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const currentQuiz = quizData[currentQuestionIndex];
+            document.getElementById('quiz-progress').innerText = `Question ${currentQuestionIndex + 1} of ${quizData.length}`;
+            document.getElementById('quiz-score').innerText = `Score: ${score}`;
+            document.getElementById('quiz-question').innerText = currentQuiz.question;
+            
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = "";
+            
+            currentQuiz.options.forEach((option, index) => {
+                const button = document.createElement('button');
+                button.className = "w-full text-left bg-brandPink-50 border border-brandPink-200 hover:border-brandPink-500 hover:bg-brandPink-100 p-4 rounded-xl text-sm transition-all font-notepad focus:outline-none block shadow-sm text-slate-900";
+                button.innerText = option;
+                button.onclick = function(e) {
+                    e.stopPropagation();
+                    handleAnswer(index);
+                };
+                optionsContainer.appendChild(button);
+            });
+        }
+
+        function handleAnswer(selectedIndex) {
+            if(selectedIndex === quizData[currentQuestionIndex].correct) {
+                score++;
+            }
+            
+            currentQuestionIndex++;
+            if(currentQuestionIndex < quizData.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-window').classList.add('hidden');
+            document.getElementById('quiz-results').classList.remove('hidden');
+            document.getElementById('results-text').innerText = `You scored ${score} out of ${quizData.length}!`;
+            
+            if (score === quizData.length && typeof confetti === 'function') {
+                confetti({
+                    particleCount: 150,
+                    spread: 80,
+                    origin: { y: 0.6 },
+                    colors: ['#f06595', '#ffd43b', '#ffffff']
+                });
+            }
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            document.getElementById('quiz-results').classList.add('hidden');
+            document.getElementById('quiz-window').classList.remove('hidden');
+            loadQuestion();
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            loadQuestion();
+        });
+    </script>
+</body>
+</html>
